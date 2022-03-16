@@ -5,7 +5,7 @@ const newsFromDb = async(request,response) =>{
     try{
 
         const page=Number(request.query.page)
-        const size=Number(request.query.size)
+        const size=Number(request.query.size) 
 
         let data =await news.find({}).limit(size).skip(size*page)
         response.status(200).json(data)
